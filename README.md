@@ -68,23 +68,68 @@ pip install -r requirements.txt
 - Démarrer le serveur Zookeeper
 - Démarrer le serveur Kafka
 
-### Utilisation
-1. Collecte des données :
+4. Configurer MLflow (optionnel) :
 ```bash
-python src/data/data_collector.py
+mlflow server --host 0.0.0.0 --port 5000
 ```
 
-2. Entraînement du modèle :
+## Utilisation
+Le système peut être utilisé en deux modes : entraînement et service.
+
+### Mode Entraînement
+Pour entraîner les modèles sur vos données :
 ```bash
-python src/models/train.py
+python main.py --mode train --data path/to/your/data.csv
 ```
 
-3. Démarrer le système en temps réel :
+Cela va :
+1. Charger et analyser vos données
+2. Générer des visualisations dans le dossier `reports/`
+3. Entraîner les modèles XGBoost et Isolation Forest
+4. Sauvegarder les modèles dans le dossier `models/`
+5. Logger les métriques dans MLflow
+
+### Mode Service
+Pour démarrer le système de détection en temps réel :
 ```bash
-python src/kafka/consumer.py
+python main.py --mode serve --model models/xgboost_model
 ```
+
+Cela va :
+1. Charger le modèle spécifié
+2. Démarrer le consumer Kafka
+3. Analyser les transactions en temps réel
+4. Générer des alertes pour les transactions suspectes
+
+## Composants Principaux
+
+### Collecte de Données (`data_collector.py`)
+- Intégration avec Kafka pour la collecte en temps réel
+- Gestion des données historiques
+- Simulation de transactions pour les tests
+
+### Modèles (`models/`)
+- `base_model.py` : Classe de base pour tous les modèles
+- `xgboost_model.py` : Implémentation XGBoost pour l'apprentissage supervisé
+- `isolation_forest_model.py` : Implémentation Isolation Forest pour la détection d'anomalies
+
+### Analyse (`analysis/`)
+- Analyse exploratoire des données
+- Visualisations interactives avec Plotly
+- Génération de rapports automatiques
+
+### Traitement en Temps Réel (`consumer.py`)
+- Consumer Kafka pour le traitement des transactions
+- Scoring en temps réel
+- Système d'alertes pour les transactions suspectes
 
 ## Tests
 ```bash
 pytest tests/
 ```
+
+## Monitoring
+Le système utilise MLflow pour le suivi des expériences. Vous pouvez accéder à l'interface web MLflow à l'adresse : http://localhost:5000
+
+## Logs
+Les logs sont stockés dans le dossier `logs/` et sont rotés automatiquement (10MB par fichier, 5 fichiers de backup).
