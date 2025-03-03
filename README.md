@@ -33,7 +33,7 @@ Le projet nécessite Python 3 d'installé sur le système.
 > [!NOTE] Installation
 > Cloner le projet Git.
 
-> git clone https://github.com/blent-ai/Projet-Data-Engineering-Kafka-Fraud.git
+> git clone [https://github.com/Franck-F/Projet-Data-Science-Apache-Kafka-Fraud-Detection.git]
 > Installer les dépendances du fichier requirements.txt dans un environnement virtuel.
 
 > Linux / MacOS
