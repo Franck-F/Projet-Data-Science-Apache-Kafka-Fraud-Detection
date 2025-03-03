@@ -16,16 +16,30 @@ Il sera question dans le rôle de data scientist de mettre en place un consumer 
  - [x] Publier le code source et les résultats sur GitHub
 
 ### Structure du projet
-Le dépôt Git contient les éléments suivantes.
+```
+fraud_detection_system/
+├── src/
+│   ├── data/
+│   │   ├── data_collector.py
+│   │   └── data_preprocessor.py
+│   ├── models/
+│   │   ├── base_model.py
+│   │   ├── isolation_forest.py
+│   │   └── xgboost_model.py
+│   ├── kafka/
+│   │   ├── producer.py
+│   │   └── consumer.py
+│   └── utils/
+│       ├── config.py
+│       └── logger.py
+├── notebooks/
+│   └── exploratory_analysis.ipynb
+├── tests/
+├── config/
+├── requirements.txt
+└── README.md
+```
 
-- [ ] src/ contient les codes sources Python principaux du projet, en particulier les codes du producer (déjà présent) et du consumer.
-- [ ] data/ contient les données du projet.
-- [ ] config/ contient les configurations et paramètres du projet.
-- [ ] LICENSE.txt : licence du projet.
-- [ ] requirements.txt : liste des dépendances Python nécessaires.
-- [ ] README.md : fichier d'accueil.
-- [ ] Premiers pas
-Les instructions suivantes permettent d'exécuter le projet sur son PC.
 
 ### Pré-requis
 Le projet nécessite Python 3 d'installé sur le système.
@@ -36,15 +50,41 @@ Le projet nécessite Python 3 d'installé sur le système.
 > git clone [https://github.com/Franck-F/Projet-Data-Science-Apache-Kafka-Fraud-Detection.git]
 > Installer les dépendances du fichier requirements.txt dans un environnement virtuel.
 
-> Linux / MacOS
+### Installation
+1. Créer un environnement virtuel :
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
 ```
-python3 -m venv venv/
-source venv/bin/activate
+
+2. Installer les dépendances :
+```bash
 pip install -r requirements.txt
 ```
-Windows
+
+3. Configurer Kafka :
+- Installer Apache Kafka
+- Démarrer le serveur Zookeeper
+- Démarrer le serveur Kafka
+
+### Utilisation
+1. Collecte des données :
+```bash
+python src/data/data_collector.py
 ```
-python3 -m venv venv/
-C:\<chemin_dossir>\venv\Scripts\activate.bat
-pip install -r requirements.txt
+
+2. Entraînement du modèle :
+```bash
+python src/models/train.py
+```
+
+3. Démarrer le système en temps réel :
+```bash
+python src/kafka/consumer.py
+```
+
+## Tests
+```bash
+pytest tests/
 ```
