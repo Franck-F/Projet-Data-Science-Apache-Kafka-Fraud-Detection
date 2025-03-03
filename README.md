@@ -8,26 +8,26 @@ Dans son système, il enregistre toutes les transactions dans une base de donné
 
 Il sera question dans le rôle de data scientist de mettre en place un consumer qui puisse analyser toutes les transactions en temps réel et faire remonter les transactions potentiellement frauduleuses. Afin d'aider à calibrer un modèle de Machine Learning qui puisse identifier les transactions frauduleuses, l'entreprise utilise des robots qui ajoutent artificiellement des fraudes dans les données.
 
-#### **Étapes du projet**
+### Étapes du projet
  - [x] Construire le consumer pour analyser les transactions
  - [x] Calibrer un modèle de régression logistique
  - [x] Détecter en temps réel les cas de fraude
  - [x] Déployer le consumer dans le Cloud
  - [x] Publier le code source et les résultats sur GitHub
 
-#### **Structure du projet**
+### Structure du projet
 Le dépôt Git contient les éléments suivantes.
 
-- src/ contient les codes sources Python principaux du projet, en particulier les codes du producer (déjà présent) et du consumer.
-- data/ contient les données du projet.
-- config/ contient les configurations et paramètres du projet.
-- LICENSE.txt : licence du projet.
-- requirements.txt : liste des dépendances Python nécessaires.
-- README.md : fichier d'accueil.
-- Premiers pas
+- [] src/ contient les codes sources Python principaux du projet, en particulier les codes du producer (déjà présent) et du consumer.
+- [] data/ contient les données du projet.
+- [] config/ contient les configurations et paramètres du projet.
+- [] LICENSE.txt : licence du projet.
+- [] requirements.txt : liste des dépendances Python nécessaires.
+- [] README.md : fichier d'accueil.
+- [] Premiers pas
 Les instructions suivantes permettent d'exécuter le projet sur son PC.
 
-#### **Pré-requis**
+### Pré-requis
 Le projet nécessite Python 3 d'installé sur le système.
 
 >[!NOTE]Installation
