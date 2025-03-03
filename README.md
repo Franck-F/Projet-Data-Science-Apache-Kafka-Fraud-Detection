@@ -18,13 +18,13 @@ Il sera question dans le rôle de data scientist de mettre en place un consumer 
 ### Structure du projet
 Le dépôt Git contient les éléments suivantes.
 
-- [] src/ contient les codes sources Python principaux du projet, en particulier les codes du producer (déjà présent) et du consumer.
-- [] data/ contient les données du projet.
-- [] config/ contient les configurations et paramètres du projet.
-- [] LICENSE.txt : licence du projet.
-- [] requirements.txt : liste des dépendances Python nécessaires.
-- [] README.md : fichier d'accueil.
-- [] Premiers pas
+- [ ] src/ contient les codes sources Python principaux du projet, en particulier les codes du producer (déjà présent) et du consumer.
+- [ ] data/ contient les données du projet.
+- [ ] config/ contient les configurations et paramètres du projet.
+- [ ] LICENSE.txt : licence du projet.
+- [ ] requirements.txt : liste des dépendances Python nécessaires.
+- [ ] README.md : fichier d'accueil.
+- [ ] Premiers pas
 Les instructions suivantes permettent d'exécuter le projet sur son PC.
 
 ### Pré-requis
