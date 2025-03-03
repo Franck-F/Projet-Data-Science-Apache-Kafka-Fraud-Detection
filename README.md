@@ -17,7 +17,7 @@ Il sera question dans le rôle de data scientist de mettre en place un consumer 
 
 ### Structure du projet
 ```
-fraud_detection_system/
+Projet-Data-Science-Apache-Kafka-Fraud-Detection/
 ├── src/
 │   ├── data/
 │   │   ├── data_collector.py
